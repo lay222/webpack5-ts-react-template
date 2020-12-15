@@ -2,7 +2,7 @@
 
 ## 使用依赖说明
 - webpack5 打包工具
-- react react-dom 
+- react react-dom @types/react @types/react-dom 
 - webpack-dev-serve 热更新
 - babel-loader @babel/preset-env @babel/preset-typescript @babel/preset-react 编译
 - css-loader style-loader 对css样式转化

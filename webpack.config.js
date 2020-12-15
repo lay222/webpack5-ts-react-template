@@ -2,6 +2,7 @@ const webpack =require('webpack')
 const {resolve} = require('path');
 const HtmlWebpackPlugin =require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+// const ExtractTextPlugin= require('extract-text-webpack-plugin')
 
 module.exports ={
     // 配置入口文件
@@ -27,7 +28,8 @@ module.exports ={
     // loader转换
     module: {
         rules: [
-            {test:/\.css$/, use: [{loader:'style-loader'},{loader:'css-loader'}]},
+            // {test:/\.css$/, use: ExtractTextPlugin.extract({fallback:'style-loader',use:'css-loader'})},
+            {test:/\.css$/, use: [{loader:'style-loader'},{loader:'css-loader'}], exclude: /node_modules/},
             {test: /\.(js|jsx|ts|tsx)$/,use:'babel-loader', exclude: /node_modules/},
             {test:/\.(png|jpg|gif)$/, loader: "url-loader", options:{limit:8*1024,esModule:false} },
             // {test:/\.(png|jpg|gif)$/, loader: "file-loader", options: {name:'[hash:10].[ext]',outputPath:resolve(__dirname,'/images')}},
@@ -43,5 +45,7 @@ module.exports ={
         new webpack.HotModuleReplacementPlugin(),
         // 每次构建前清理dist目录
         new CleanWebpackPlugin({cleanStaleWebpackAssets:false}),
+        // 剥离css文件，单独打包
+        // new ExtractTextPlugin('style.css'),
     ]
 }
