@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
-import './indes.css';
-import imgURL from '../public/img/logo.png';
+import './app.css';
+import { Button, Space } from 'antd';
+// import imgURL from '../public/img/logo.png';
 
 export default () => {
-  const [aa, setAa] = useState<string>('aaaa');
-  console.log(aa);
+  const [aa, setAa] = useState<string>('aah');
+
   return (
     <>
-      <div style={{ color: 'red' }}>Hello Word</div>
-      <img src={imgURL} alt="111" />
+      <Space>
+        <div style={{ color: 'red' }}>Hello Word</div>
+        <p>{aa}</p>
+        <Button onClick={() => setAa('cocci')} type="primary">按钮</Button>
+        {/* <img src={imgURL} alt="111" /> */}
+      </Space>
     </>
   );
 };
