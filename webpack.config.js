@@ -18,13 +18,6 @@ module.exports ={
     },
     // dev环境下开启 source-map可以展示我们代码的错误位置
     // devtool: 'cheap-module-eval-source-map',
-    devServer: {
-        contentBase: resolve(__dirname, '/dist'),
-        hot:true,
-        port:9000,
-        open:true,
-        compress:true,
-    },
     // loader转换
     module: {
         rules: [
