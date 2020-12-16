@@ -1,13 +1,12 @@
-import './indes.css'
+import './indes.css';
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
 // @ts-ignore
-import App from './App.tsx'
-import './indes.css'
+import App from './App.tsx';
 
 ReactDOM.render(
-        <>
-        <App />
-        </>,
-        document.getElementById('root')
+  <>
+    <App />
+  </>,
+  document.getElementById('root'),
 );
