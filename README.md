@@ -2,13 +2,19 @@
 
 ## 使用依赖说明
 - webpack5 打包工具
-- react react-dom @types/react @types/react-dom 
-- webpack-dev-serve 热更新
+- react react-dom react-router @types/react @types/react-dom 
+- webpack-dev-serve 模块热更新
 - babel-loader @babel/preset-env @babel/preset-typescript @babel/preset-react 编译
 - css-loader style-loader 对css样式转化
-- speed-measure-webpack-plugin 进行速度分析
 - file-loader url-loader 对图片进行处理，url-loader 转换成base64，
-- webpack-merge webpack配置，提取公共部分，测试环境生产环境剥离
+- webpack-merge webpack配置，提取webpack配置公共部分，测试环境生产环境剥离
+- mini-css-extract-plugin 剥离css代码
+- optimize-css-assets-webpack-plugin 压缩css代码  
+- eslint 代码校验
+- clean-webpack-plugin 清除上次打包代码
+- html-webpack-plugin 自动将打包的js代码引入html中
+- typescript 
+- antd UI框架
 
 ## 遇到问题
 - webpack-dev-server启动报错Error: Cannot find module ‘webpack-cli/bin/config-yargs‘

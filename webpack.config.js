@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MinCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   // 配置入口文件
@@ -22,14 +23,19 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
     },
+    runtimeChunk: {
+      name: 'manifest',
+    },
   },
 
   // loader转换
   module: {
     rules: [
       {
+        // 剥离css代码，配置了MinCssExtractPlugin.loader，就不需要style-loader
         test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+        use: [{ loader: MinCssExtractPlugin.loader }, { loader: 'css-loader' }],
+        include: resolve(__dirname, 'src'),
         exclude: /node_modules/,
       },
       {
@@ -57,5 +63,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     // 每次构建前清理dist目录
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    // 剥离css代码
+    new MinCssExtractPlugin({
+      filename: 'css/[name].css',
+    }),
   ],
 };
