@@ -3,4 +3,6 @@ const common = require('./webpack.config');
 
 module.exports = merge(common, {
   mode: 'production',
+  devtool: 'source-map',
+  plugins: [],
 });
