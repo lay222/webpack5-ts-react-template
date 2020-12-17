@@ -28,6 +28,14 @@ module.exports = {
     },
   },
 
+  // 配置别名
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+      Component: resolve(__dirname, 'src/component'),
+    },
+  },
+
   // loader转换
   module: {
     rules: [
