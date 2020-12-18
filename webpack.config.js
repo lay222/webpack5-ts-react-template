@@ -1,8 +1,8 @@
-const webpack = require('webpack');
-const { resolve } = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MinCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack')
+const { resolve } = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MinCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   // 配置入口文件
@@ -14,18 +14,20 @@ module.exports = {
   output: {
     // 如果不加哈希值，浏览器会有缓存，可能你部署了，但是用户看到的还是老页面
     // 8是hash的长度，如果不设置，webpack会设置默认值为20。
-    filename: 'js/[chunkhash:8].bundle.js',
+    filename: 'js/[chunkhash:10].bundle.js',
     path: resolve(__dirname, 'dist'),
   },
 
-  // 代码分割
   optimization: {
+    // 代码分割
     splitChunks: {
       chunks: 'all',
     },
     runtimeChunk: {
       name: 'manifest',
     },
+    // tree shaking
+    sideEffects: false,
   },
 
   // 配置别名
@@ -76,4 +78,4 @@ module.exports = {
       filename: 'css/[name].css',
     }),
   ],
-};
+}

@@ -15,6 +15,7 @@
 - html-webpack-plugin 自动将打包的js代码引入html中
 - typescript 
 - antd UI框架
+- tree shaking  sidEffects
 
 ## 遇到问题
 - webpack-dev-server启动报错Error: Cannot find module ‘webpack-cli/bin/config-yargs‘
