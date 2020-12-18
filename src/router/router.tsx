@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router, Switch, Link, Route,
-} from 'react-router-dom';
-import first from '@/pages/home/index.tsx';
-import page from '@/pages/home/page.tsx';
+} from 'react-router-dom'
+import first from '@/pages/home/index.tsx'
+import page from '@/pages/home/page.tsx'
 
 export default () => (
   <Router>
@@ -24,4 +24,4 @@ export default () => (
       <Route path="/page" component={page} />
     </Switch>
   </Router>
-);
+)

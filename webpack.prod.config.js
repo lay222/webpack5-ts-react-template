@@ -1,6 +1,6 @@
-const { merge } = require('webpack-merge');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const common = require('./webpack.config');
+const { merge } = require('webpack-merge')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const common = require('./webpack.config')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -9,4 +9,4 @@ module.exports = merge(common, {
   plugins: [
     new OptimizeCssAssetsPlugin(),
   ],
-});
+})

@@ -1,6 +1,6 @@
-const { merge } = require('webpack-merge');
-const { resolve } = require('path');
-const common = require('./webpack.config');
+const { merge } = require('webpack-merge')
+const { resolve } = require('path')
+const common = require('./webpack.config')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',
@@ -17,4 +17,4 @@ module.exports = merge(common, {
     //   changeOrigin: true,
     // },
   },
-});
+})
