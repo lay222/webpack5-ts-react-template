@@ -18,6 +18,7 @@
 
 ## 优化
 - tree shaking  sidEffects
+- webpack-bundle-analyzer bundle大小分析
 
 ## 遇到问题
 - webpack-dev-server启动报错Error: Cannot find module ‘webpack-cli/bin/config-yargs‘

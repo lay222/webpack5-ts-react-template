@@ -30,6 +30,7 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     // 解决webpack-merge 应该在项目的依赖中，而不是devDependencies
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    // 结尾去除分号
     semi: ['error', 'never'],
   },
   settings: {
