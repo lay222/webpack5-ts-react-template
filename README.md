@@ -15,13 +15,15 @@
 - html-webpack-plugin 自动将打包的js代码引入html中
 - typescript 
 - antd UI框架
+
+## 优化
 - tree shaking  sidEffects
 
 ## 遇到问题
 - webpack-dev-server启动报错Error: Cannot find module ‘webpack-cli/bin/config-yargs‘
     解决方法：由于webpack-cli版本4，删除了webpack-cli/bin/config-yargs文件，安装webpack-cli版本3的依赖解决
 - require is not defined 报错     因为在webpack里面配置了target："node"导致的
-- 引入项目不以文件后缀tsx结尾提示错误
+- 引入项目不以文件后缀tsx结尾提示错误  在tsconfig.json里面配置path，在webpack配置resolver。extensions里面配置后缀文件类型
 - CleanWebpackPlugin is not a constructor 因为新版本结构出来CleanWebpackPlugin,与之前使用不一样
 - 图片无法显示  使用import导入引用
 - 

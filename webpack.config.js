@@ -3,6 +3,7 @@ const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MinCssExtractPlugin = require('mini-css-extract-plugin')
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 
 module.exports = {
   // 配置入口文件
@@ -28,10 +29,23 @@ module.exports = {
     },
     // tree shaking
     sideEffects: false,
+    // minimizer: [new ParallelUglifyPlugin({
+    //   uglifyJS: {
+    //     output: { comments: false },
+    //     compress: {
+    //       waring: false,
+    //       drop_console: true,
+    //       reduce_vars: true,
+    //     },
+    //   },
+    // })],
   },
 
   // 配置别名
   resolve: {
+    // 导出语句不带后缀时查找
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+    // 别名配置
     alias: {
       '@': resolve(__dirname, 'src'),
       Component: resolve(__dirname, 'src/component'),
@@ -51,6 +65,7 @@ module.exports = {
       {
         test: /\.(js|jsx|ts|tsx)$/,
         use: 'babel-loader',
+        include: resolve(__dirname, 'src'),
         exclude: /node_modules/,
       },
       {

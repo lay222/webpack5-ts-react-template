@@ -2,8 +2,8 @@ import React from 'react'
 import {
   BrowserRouter as Router, Switch, Link, Route,
 } from 'react-router-dom'
-import first from '@/pages/home/index.tsx'
-import page from '@/pages/home/page.tsx'
+import first from '@/pages/home'
+import page from '@/pages/home/page'
 
 export default () => (
   <Router>

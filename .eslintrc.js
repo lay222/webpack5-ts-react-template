@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
   extends: [
@@ -30,5 +31,12 @@ module.exports = {
     // 解决webpack-merge 应该在项目的依赖中，而不是devDependencies
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     semi: ['error', 'never'],
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 }

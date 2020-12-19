@@ -5,8 +5,8 @@ const common = require('./webpack.config')
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
-  // 在生产环境压缩css代码
   plugins: [
+    // 在生产环境压缩css代码
     new OptimizeCssAssetsPlugin(),
   ],
 })

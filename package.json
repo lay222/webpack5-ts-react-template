@@ -6,6 +6,7 @@
   "scripts": {
     "build:prod": "webpack --config webpack.prod.config.js",
     "build:dev": "webpack --config webpack.dev.config.js",
+    "dll": "webpack --config webpack.dll.config.js",
     "start": "webpack-dev-server --config webpack.dev.config.js",
     "eslint": "eslint src",
     "check": "tsc -w"
@@ -45,7 +46,8 @@
     "webpack": "^5.10.3",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.7.0"
+    "webpack-merge": "^5.7.0",
+    "webpack-parallel-uglify-plugin": "^2.0.0"
   },
   "dependencies": {
     "antd": "^4.9.4",
