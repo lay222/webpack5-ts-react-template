@@ -6,7 +6,7 @@
   "scripts": {
     "build:prod": "webpack --config webpack.prod.config.js",
     "build:dev": "webpack --config webpack.dev.config.js",
-    "dll": "webpack --config webpack.dll.config.js",
+    "analyse": "webpack --config webpack.analyse.config.js",
     "start": "webpack-dev-server --config webpack.dev.config.js",
     "eslint": "eslint src",
     "check": "tsc -w"

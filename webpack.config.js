@@ -22,7 +22,21 @@ module.exports = {
   optimization: {
     // 代码分割
     splitChunks: {
-      chunks: 'all',
+      chunks: 'initial',
+      minChunks: 1,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          minSize: 200 * 1024,
+          maxSize: 0,
+        },
+        default: {
+          priority: -10,
+          minSize: 200 * 1024,
+          reuseExistingChunk: true,
+        },
+      },
     },
     runtimeChunk: {
       name: 'manifest',
