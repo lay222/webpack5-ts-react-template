@@ -3,9 +3,10 @@ const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MinCssExtractPlugin = require('mini-css-extract-plugin')
-const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
+  // webpack5可以省略入口和出口，会自动配置
   // 配置入口文件
   entry: {
     app: './src/index.tsx',
@@ -17,6 +18,11 @@ module.exports = {
     // 8是hash的长度，如果不设置，webpack会设置默认值为20。
     filename: 'js/[chunkhash:10].bundle.js',
     path: resolve(__dirname, 'dist'),
+  },
+  // 开启webpack5自带的缓存
+  cache: {
+    type: 'filesystem',
+    version: 'youVersion',
   },
 
   optimization: {
@@ -53,6 +59,14 @@ module.exports = {
     //     },
     //   },
     // })],
+    minimizer: [
+      new TerserPlugin({
+        // 开启缓存
+        // cache: true,
+        // 开启多线程打包
+        parallel: true,
+      }),
+    ],
   },
 
   // 配置别名
