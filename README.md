@@ -27,7 +27,7 @@
 - 引入项目不以文件后缀tsx结尾提示错误  在tsconfig.json里面配置path，在webpack配置resolver。extensions里面配置后缀文件类型
 - CleanWebpackPlugin is not a constructor 因为新版本结构出来CleanWebpackPlugin,与之前使用不一样
 - 图片无法显示  使用import导入引用
-- 
+- 热更新，测试环境路由刷新报错，在devServe里面配置historyApiFallback: true 
 
 ## babel问题
 - babel.config.json 和 .babelrc.json的区别
