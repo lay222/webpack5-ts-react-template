@@ -7,8 +7,9 @@ export default (props:any) => {
   const location = useLocation()
 
   useEffect(() => {
-    console.log(props, location, 'this.props')
+    console.log(props, location, 'index页面调用111111')
   }, [])
+  console.log('index页面调用1111')
   return (
     <>
       <div>{a}</div>

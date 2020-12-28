@@ -6,6 +6,7 @@ import { Button, Space } from 'antd'
 export default () => {
   const [aa, setAa] = useState<string>('aah')
 
+  console.log('app页面调用了111')
   return (
     <>
       <Space>

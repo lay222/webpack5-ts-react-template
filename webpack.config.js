@@ -37,6 +37,15 @@ module.exports = {
           minSize: 200 * 1024,
           maxSize: 0,
         },
+        // 抽离antd包
+        antd: {
+          name: 'chunks-antd',
+          test: /[\\/]node_modules[\\/]antd[\\/]/,
+          chunks: 'all',
+          priority: -9,
+          reuseExistingChunk: true,
+          enforce: true,
+        },
         default: {
           priority: -10,
           minSize: 200 * 1024,
